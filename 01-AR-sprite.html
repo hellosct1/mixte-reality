@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="assets/lib/aframe-v0.8.2.min.js"></script>
+  <script src="assets/lib/aframe-ar.js"></script>
+</head>
+<body>
+
+  <div style='position: fixed; top: 10px; width:100%; text-align: left; z-index: 1;'>
+    <img src="assets/media/fxvr.png" width="300px">
+  </div>
+
+  <a-scene embedded arjs='sourceType: webcam;'>
+    <a-marker-camera preset='hiro'></a-marker-camera>   
+  </a-scene>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="assets/lib/aframe-v0.8.2.min.js"></script>
+  <script src="assets/lib/aframe-ar.js"></script>
+  <script src="assets/lib/aframe-html-shader.min.js"></script>
+</head>
+<body>
+
+<!-- scene avec l'utilisation de la caméra -->
+<a-scene embedded arjs='sourceType: webcam;'>
+
+
+<!-- ASSETS-->
+<a-assets>
+    <img id="Floor" src="assets/media/crate.gif">
+    <img id="logo" src="assets/media/fxvr.png">
+</a-assets>
+
+<!-- affiche le logo pré-chargé -->
+  <a-image src="#logo" position="-4.5 3 -4"></a-image>
+
+<!-- affiche un texte -->
+<a-text
+  value="Festival Geek Faeries 2019"
+  size="0.1"
+  position="-4 3 -4"
+  color="#FF7777">
+</a-text>
+
+
+<!-- objet animation -->
+<a-box color="blue" size="4" position="4 1 -4">
+<a-animation attribute="rotation"
+from="0 0 0"
+to="360 360 0"
+repeat="indefinite"></a-animation>
+
+<a-animation attribute="opacity"
+duration="1000"
+from="1"
+to="0.5"
+repeat="indefinite"
+direction="alternate"></a-animation>
+
+</a-box>
+
+
+<!-- affiche le sol -->
+<a-sphere position="0 0 0" scale="1 7 5" name="Floor"
+material="shader:standard;metalness:0;repeat:20 20;src:#Floor"
+geometry="primitive:sphere" rotation="0 0 90"></a-sphere>
+
+
+<!-- Affiche une image avec un message de Bienvenue -->
+<a-entity position="0 2.3 -0.7" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+scale="1.5 1.5 0.1"
+rotation="0 -75 0"
+text="color: black; align: left; width: 2;
+value: Bienvenue !\nUn petit coucou Geek Faeries 2019
+">
+</a-entity>
+
+<!-- Champ body venant de Drupal -->
+<a-plane
+  position="0 2 -6"
+  height="3"
+  width="3"
+  material="
+    shader: html;
+    target: #planeHTML;
+    ratio: height;
+    transparent: true;
+    side: double">
+  </a-plane>
+
+</a-scene>
+
+
+<div style="width: 1px; height: 1px; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+  <div id="planeHTML" style="color: white; background-color:#FF0000; width: 500px; height: 500px; font-size: 32px; font-family: monospace; text-align: center">
+   <h2>Welcome!</h2>
+   <p>Un petit texte en <b>gras</b> et en <i>italic</i>,</p>
+   <p>pour montrer la compatibilité du format HTML de ckeditor venant d'un champ body de Drupal</p>
+ </div>
+</div>
+
+
+</body>
+</html>

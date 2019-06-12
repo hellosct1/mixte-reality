@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+  <script src="assets/lib/aframe-v0.9.2.min.js"></script>
+  <script src="assets/lib/aframe-ar.js"></script>
+  <script src="assets/lib/aframe-html-shader.min.js"></script>
+</head>
+<body>
+
+<!--  <a-scene> -->
+  <a-scene embedded arjs='sourceType: webcam;'>
+<!--    <a-entity geometry="primitive: box"
+      material="
+        shader: html;
+        target: #boxHTML"
+        position="0 0 -5">
+    </a-entity>
+-->
+    <a-plane
+      position="0 2 -6"
+      height="3"
+      width="3"
+      rotation="-45 0 0"
+      material="
+        shader: html;
+        target: #planeHTML;
+        ratio: height;
+        transparent: true;
+        side: double">
+      </a-plane>
+
+ </a-scene>
+
+ <!-- Camera -->
+ <a-marker-camera preset='hiro'></a-marker-camera>
+
+
+ <!-- HTML to render as a material. -->
+<!-- <div style="width: 1px; height: 1px; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+   <div id="boxHTML" style="background-image: url(img/logo.jpg); color: white; width: 500px; height: 500px; font-size: 64px; font-family: monospace; text-align: center">
+     <p style="background: rgb(30, 30, 30); position: absolute; top: 25px; width: 500px">DRUPALCAMP 2019</p>
+   </div>
+ </div>
+ -->
+
+ <div style="width: 1px; height: 1px; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+   <div id="planeHTML" style="color: white; background-color:#FF0000; width: 500px; height: 500px; font-size: 32px; font-family: monospace; text-align: center">
+    <h2>Welcome!</h2>
+    <p>Circa hos dies Lollianus primae lanuginis adulescens,</p>
+    <p>Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.</p>
+<!-- <?php print $row->body; ?> -->
+  </div>
+ </div>
+
+
+</body>
+</html>

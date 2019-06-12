@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="assets/lib/aframe-v0.8.2.min.js"></script>
+</head>
+<body>
+<a-scene>
+
+<!-- Texte -->
+<a-text value="Geeksfaeries 2019" size="0.4" position="0 1 -4" color="blue" geometry="primitive:plane"></a-text>
+
+<!-- objet basic -->
+<a-box size="2" position="-2 1 -4" color="#4CC3D9"></a-box>
+
+<!-- objet animation -->
+<a-box color="red" size="4" position="2 1 -4">
+<a-animation attribute="rotation"
+from="0 0 0"
+to="360 360 0"
+repeat="indefinite"></a-animation>
+
+<a-animation attribute="position"
+delay="2000"
+duration="3000"
+from="2 1 -4"
+to="5 1 -10"></a-animation>
+
+<a-animation attribute="color"
+duration="1000"
+from="red"
+to="yellow"
+repeat="indefinite"
+direction="alternate"></a-animation>
+
+<a-animation attribute="opacity"
+duration="1000"
+from="1"
+to="0.5"
+repeat="indefinite"
+direction="alternate"></a-animation>
+
+</a-box>
+
+
+<!-- ASSETS-->
+<a-assets>
+  <img id="img" src="assets/media/hqe-pano1.jpg"></img>
+  <video id="video" src="assets/media/Sector_One_Dune_Odd_Stuff.mp4"></video>
+  <a-asset-item id="tree-obj" src="assets/media/tree.obj"></a-asset-item>
+</a-assets>
+
+<!-- realistic sky -->
+<a-sky src="#img"></a-sky>
+
+<!--3D models -->
+<a-entity position="10 -5.3 -2"
+obj-model="obj: #tree-obj"
+scale="8 8 8"
+rotation="0 45 0">
+</a-entity>
+
+<!--video player -->
+<a-video autoplay loop="true" src="assets/media/Sector_One_Dune_Odd_Stuff.mp4" width="16" height="9" position="-50 -3 -20" roughness="0.31" rotation="0 90 0"></a-video>
+<a-plane color="#FF0000" width="18" height="18" position="+50 5 -20.1" rotation="0 45 0"></a-plane>
+
+</a-scene>
+
+
+</body>
+</html>
