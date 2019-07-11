@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/lib/aframe-v0.9.2.min.js"></script>
+  <script src="assets/lib/aframe-event-set-component.min.js"></script>
+  <script src="assets/lib/aframe-particle-system-component.min.js"></script>
+  <script src="assets/lib/aframe-animation-component.min.js"></script>
+  <script src="assets/lib/aframe-outline.min.js"></script>
+  <script src="assets/lib/aframe-ar.js"></script>
+  <script src="js/shader.js"></script>
+</head>
+<body>
+  <a-scene embedded arjs='sourceType: webcam;'>
+
+    <!-- ASSETS-->
+    <a-assets>
+      <img id="logo" src="assets/media/vip2019.jpeg">
+      <audio id="sound" src="assets/media/odd_stuff-main.mp3"></audio>
+  <!--    <a-asset-item id="tree-obj" src="assets/media/tree.obj"></a-asset-item> -->
+    </a-assets>
+
+    <a-plane src="#logo" position="0 0 2.5" rotation="-90 0 0" width="10" height="10" color="#233c1e"></a-plane>
+    <a-marker-camera preset="hiro"></a-marker-camera>
+
+
+    <!-- ////// Etape 2 ////////////////// -->
+<!--
+    <a-box position="-3 1 -5" rotation="0 90 30" scale="" color="#F44336"
+      event-set__enter="_event: mouseenter; _target: #resultat; color: #F44336">
+    </a-box>
+    <a-box position="-1 2 -5" rotation="0 45 45" scale="0.75 0.75 0.75" color="#2196F3"
+      event-set__enter="_event: mouseenter; _target: #resultat; color: #2196F3">
+    </a-box>
+    <a-box position="2 2 -4" rotation="0 45 30" scale="0.75 0.75 0.75" color="#009688"
+      event-set__enter="_event: mouseenter; _target: #resultat; color: #009688">
+    </a-box>
+    <a-box position="1 1 -5" rotation="0 70 30" scale="0.9 0.9 0.9" color="#E91E63"
+      event-set__enter="_event: mouseenter; _target: #resultat; color: #E91E63">
+    </a-box>
+
+    <a-entity laser-controls="hand: left"></a-entity>
+    <a-entity laser-controls="hand: right"></a-entity>
+
+    <a-cylinder id="resultat" position="0 2.75 -3" radius="0.5" height="1" color="#FFC65D" shadow></a-cylinder>
+
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+-->
+
+    <!-- ////// Etape 3////////////////////// -->
+
+    <a-sphere material="shader:displacement-offset" myoffset-updater scale="9 9 9" radius="0.2" position="-9.61 1.9 -1.18" segments-height="128" segments-width="128">
+      <a-animation attribute="scale" direction="alternate-reverse" dur="5000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
+    </a-sphere>
+
+    <!-- /////Etape 4 ///////////////////////////// -->
+<!--
+    <a-assets>
+      <a-asset-item id="tree-obj" src="assets/media/tree.obj"></a-asset-item>
+    </a-assets>
+
+    <a-entity id="arbre" position="2 1.2 4.3" obj-model="obj: #tree-obj" scale="8 8 8" rotation="0 45 0"></a-entity>
+    <a-text id="texte" value="VIP 2019 - VIP 2019 - VIP 2019" size="5" position="-2 1.55 4.6" color="#1bed02" align=center transparent=false height=3 side=back geometry="primitive:plane"></a-text>
+    <a-box size="2" position="-2 1.2 4.5" color="#4CC3D9"></a-box>
+-->
+    <!-- ///// Etape 5/////////////////// -->
+  <!--  <a-assets>
+      <audio id="sound" src="assets/media/odd_stuff-main.mp3"></audio>
+    </a-assets>
+-->
+
+    <a-entity id="left" geometry="primitive: sphere; radius: 1.25" material="color: #FF0000" position="25 -1.25 -2" animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+    <a-entity id="sky" geometry="primitive: left; radius: 100" material="color: #660000; shader: flat; side: back"></a-entity>
+
+    <a-entity id="center" geometry="primitive: sphere; radius: 1.25" material="color: #00FF00" position="40 1.25 -4" animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+    <a-entity id="sky" geometry="primitive: center; radius: 100" material="color: #006600; shader: flat; side: back"></a-entity>
+
+    <a-entity id="right" geometry="primitive: sphere; radius: 1.25" material="color: #0000FF" position="55 2.25 -3" animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-entity>
+    <a-entity id="sky" geometry="primitive: right; radius: 100" material="color: #000066; shader: flat; side: back"></a-entity>
+
+    <a-entity sound="autoplay: true; src: #sound;"></a-entity>
+
+  </a-scene>
+</body>
+</html>
