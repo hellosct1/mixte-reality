@@ -18,7 +18,7 @@ https://glitch.com/~xr-a-frame-and-drupal
 ## library original
 
 * A-frame
-https://aframe.io/releases/0.9.2/aframe.min.js
+https://aframe.io/releases/1.0.4/aframe.min.js
 
 * A-frame AR
 https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js
